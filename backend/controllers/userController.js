@@ -223,6 +223,7 @@ const deleteUserProfile = asyncError(async (req, res, next) => {
     }
     user = await User.findByIdAndDelete(req.params.id); res.status(200).json({
         success: true,
+        message: "User Deleted Successfully",
         user,
     })
 })

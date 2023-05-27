@@ -10,5 +10,7 @@ router.route('/product/:id').get(myModules.getProductDetails)
 // router.route('/product/:id').put(myModules.updateProduct)
 // router.route('/product/:id').delete(myModules.deleteProduct)
 router.route('/admin/product/:id').put(isAuthenticated, authorizeRoles("admin"), myModules.updateProduct).delete(isAuthenticated, authorizeRoles("admin"), myModules.deleteProduct)
+router.route('/review').put(isAuthenticated, myModules.createProductReview)
+router.route('/review').get(myModules.getProductReviews).delete(isAuthenticated, myModules.deleteProductReviews)
 
 export default router;
